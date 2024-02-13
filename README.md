@@ -1,6 +1,17 @@
 # Mindustry Assembler
 The assembler doesn't do much other that make the jump commands dynamically calculated. It is meant for use with the [Mindustry Compiler](TBD).
 
+## Installation
+Make sure you have Rust installed (with Cargo). If you don't, you can install it [here](https://www.rust-lang.org/tools/install).
+Run the following commands in your terminal:
+```sh
+git clone https://github.com/ThatOneShortGuy/MindustryAssembler.git
+cd MindustryAssembler
+cargo build --release
+```
+
+Or you can download the binary from the [releases](https://github.com/ThatOneShortGuy/MindustryAssembler/releases) page.
+
 ## Usage
 Almost like normal Mindustry code, but with a few differences:
 1. All code points must have whitespace in front of them after the newline
@@ -21,7 +32,7 @@ Almost like normal Mindustry code, but with a few differences:
 ```
 `&loop` will be computed and replaced in the jump command with the line number of the `&loop` label (1).
 
-### Running the assembler
+## Running the assembler
 ```sh
 assembler [-d] [-h] [-c] <file> [-o <output_file>]
 ```
