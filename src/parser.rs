@@ -19,7 +19,7 @@ pub struct Token {
 pub fn tokenizer(input: &String) -> Vec<Token> {
     let mut tokens: Vec<Token> = Vec::new();
     let mut lineno = 0;
-    let re = Regex::new(r"^(?P<addr>&[^\s]+)?\s+(?P<instr>[^#]*)?(?P<comment>#.*)$").unwrap();
+    let re = Regex::new(r"^(?P<addr>&[^\s]+)?(?:\s+(?P<instr>[^#\n]+)?)?(?P<comment>#.*)?$").unwrap();
     for (source_lineno, line) in input.lines().enumerate() {
         let Some(caps) = re.captures(line) else {
             continue;
